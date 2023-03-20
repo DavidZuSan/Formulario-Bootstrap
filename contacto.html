@@ -10,6 +10,15 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 
+  <style>
+    .toast {
+      position: absolute;
+      bottom: 0;
+      margin-bottom: 20px;
+      margin-left: 20px;
+    }
+  </style>
+
   <title>Formulario</title>
 </head>
 
@@ -41,64 +50,49 @@
     <form id="formulario">
       <div class="mb-3">
         <label for="email" class="form-label fw-bold">Correo electrónico</label>
-        <input 
-          type="email" 
-          class="form-control" 
-          id="email" 
-          placeholder="correo@ejemplo.com"
-          aria-describedby="emailHelp"
-          name="emailCampo"
-          required
-        >
+        <input type="email" class="form-control" id="email" placeholder="correo@ejemplo.com"
+          aria-describedby="emailHelp" name="emailCampo" required>
         <div id="emailHelp" class="form-text">Nunca compartiremos su correo electrónico con nadie más.</div>
       </div>
-      
+
       <div class="mb-3">
         <label for="password" class="form-label fw-bold">Contraseña</label>
-        <input 
-          type="password"
-          class="form-control"
-          id="password"
-          aria-describedby="passwordHelpBlock"
-          name="passCampo"
-          required
-        >
+        <input type="password" class="form-control" id="password" aria-describedby="passwordHelpBlock" name="passCampo"
+          required>
 
-        <div id="passwordHelpBlock" class="form-text"> Tu contraseña debe tener entre 8 y 20 caracteres, contener letras y números', y no debe contener espacios, caracteres especiales, ni emoji.</div>
+        <div id="passwordHelpBlock" class="form-text"> Tu contraseña debe tener entre 8 y 20 caracteres, contener letras
+          y números', y no debe contener espacios, caracteres especiales, ni emoji.</div>
       </div>
 
       <div class="mb-3 form-check">
-        <input 
-          type="checkbox" 
-          name="checkCampo"
-          class="form-check-input" 
-          id="checkbox"
-        >
-        <label 
-          class="form-check-label" 
-          for="checkbox"
-          >Verificado
+        <input type="checkbox" name="checkCampo" class="form-check-input" id="checkbox">
+        <label class="form-check-label" for="checkbox">Verificado
         </label>
       </div>
-      <button
-        id="btnEnviar"
-        class="btn btn-primary w-100"
-        type="submit" 
-      >Enviar
-    </button>
+      <button id="btnEnviar" class="btn btn-primary w-100" type="submit">Enviar
+      </button>
 
-      <button
-        id="btnCargando"
-        class="btn btn-warning w-100 d-none"
-        type="button"
-        disabled>
-        <span 
-          class="spinner-border spinner-border-sm" 
-          role="status" 
-          aria-hidden="true"></span>
+      <button id="btnCargando" class="btn btn-warning w-100 d-none" type="button" disabled>
+        <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
         Enviando...
       </button>
     </form>
+  </div>
+
+  <!-- Toast -->
+  <div class="toast align-items-center" role="alert" aria-live="assertive" aria-atomic="true">
+
+    <div class="d-flex">
+      <div class="toast-body justify-content-center align-items-center w-100">
+        No olvides pulsar la casilla "Verificado".
+      </div>
+      <button 
+        type="button" 
+        class="btn-close me-2 m-auto" 
+        data-bs-dismiss="toast" 
+        aria-label="Close"
+      ></button>
+    </div>
   </div>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
