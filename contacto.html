@@ -38,7 +38,7 @@
   <div class="container">
     <h1 class="my-3">Contacto</h1>
 
-    <form>
+    <form id="formulario">
       <div class="mb-3">
         <label for="email" class="form-label fw-bold">Correo electrónico</label>
         <input 
@@ -47,6 +47,7 @@
           id="email" 
           placeholder="correo@ejemplo.com"
           aria-describedby="emailHelp"
+          name="emailCampo"
           required
         >
         <div id="emailHelp" class="form-text">Nunca compartiremos su correo electrónico con nadie más.</div>
@@ -59,6 +60,7 @@
           class="form-control"
           id="password"
           aria-describedby="passwordHelpBlock"
+          name="passCampo"
           required
         >
 
@@ -66,18 +68,43 @@
       </div>
 
       <div class="mb-3 form-check">
-        <input type="checkbox" class="form-check-input" id="check1">
-        <label class="form-check-label" for="check1">Verificado</label>
+        <input 
+          type="checkbox" 
+          name="checkCampo"
+          class="form-check-input" 
+          id="checkbox"
+        >
+        <label 
+          class="form-check-label" 
+          for="checkbox"
+          >Verificado
+        </label>
       </div>
-      <button type="submit" class="btn btn-primary">Enviar</button>
+      <button
+        id="btnEnviar"
+        class="btn btn-primary w-100"
+        type="submit" 
+      >Enviar
+    </button>
+
+      <button
+        id="btnCargando"
+        class="btn btn-warning w-100 d-none"
+        type="button"
+        disabled>
+        <span 
+          class="spinner-border spinner-border-sm" 
+          role="status" 
+          aria-hidden="true"></span>
+        Enviando...
+      </button>
     </form>
   </div>
-
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
     crossorigin="anonymous"></script>
 
+  <script src="app.js"></script>
 </body>
-
 </html>
